@@ -1,0 +1,49 @@
+---
+title: "Reverse a String"
+date: "2024-07-07"
+---
+
+# Coding Challenge: Reverse a String
+
+## Problem Statement
+
+Write a function that takes a string as input and returns the string reversed.
+
+## Example
+
+```cpp
+// Example 1:
+std::string input = "hello";
+std::string output = reverseString(input);
+// Output: "olleh"
+
+// Example 2:
+std::string input = "world";
+std::string output = reverseString(input);
+// Output: "dlrow"
+```
+
+## Solution
+
+Here's a C++ function to reverse a string:
+
+```cpp
+#include <string>
+
+std::string reverseString(std::string str) {
+    int left = 0;
+    int right = str.length() - 1;
+
+    while (left < right) {
+        // Swap characters
+        char temp = str[left];
+        str[left] = str[right];
+        str[right] = temp;
+
+        // Move towards the center
+        left++;
+        right--;
+    }
+
+    return str;
+}
